@@ -1,0 +1,333 @@
+@import url('https://font.googleapies.com/css2?family=Poppins:wght@200,300,400,500,600,700,800,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}   
+body
+{
+    min-height: 100vh;
+    background: #dcdcdc;
+}   
+.toggle
+{
+    position: fixed;
+    top: 15px;
+    left: 25px;
+    width:  40px;
+    height: 40px;
+    background: #333333 url("../img//menu.png");
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    z-index: 1000;
+    margin-right: 1250px;
+}
+.toggle.active
+{
+    background: #ff0000 url("../img/close.png");
+    border-radius: 30px;
+    background-size: 15px;
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.sidebar
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 500px);
+    height: 100%;
+    padding: 100px;
+}
+.sidebar
+{
+    position: fixed;
+    background: #f8f8f8;
+    transition: 0.6s;
+    padding: 40px;
+    z-index: 100;
+    left: -100%;
+    width: 350px;
+}
+.sidebar.active
+{
+      left: 0;
+}
+.sidebar ul
+{
+    margin-top: 60px;
+    flex-direction: column;
+}
+.sidebar ul li
+{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.sidebar ul li a
+{
+    color: #111;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 30px 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.sidebar ul li a img
+{
+    width: 20px;
+    height: 20px;
+}
+.sidebar ul li a:hover
+{
+    color: #00bcd4;
+}
+.container
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 20px;
+    width: 1200px;
+    padding: 20px;
+    margin-left: 80px;
+}
+.container .card
+{
+    width: 100%;
+    background: #fff;
+}
+.container .card .imgBx
+{
+    position: relative;
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+}
+.container .card .imgBx img
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    transform-origin: center;
+}
+.container .card:hover .imgBx img
+{
+
+}
+.container .card .content 
+{
+    padding: 15px;
+}
+.container .card .content .productName h1
+{
+    font-size: 18px;
+    font-weight: 500;
+    color: #0033cc;
+    margin: 5px 0;
+    justify-content: center;
+}
+.container .card .content .price_rating
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .card .content .price_rating h3
+{
+    font-size: 20px;
+    color: #006600;
+    font-weight: 500;
+}
+.container .card .content .price_rating h3 .fa
+{
+    color: #006600;
+}
+.container .card .content .price_rating .fa
+{
+    color: #ffd513;
+    cursor: pointer;
+}
+.container .card .content .price_rating .fa.grey
+{
+    color: #ccc;
+}
+.action
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.action li
+{
+    position: relative;
+    list-style: none;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform: translateX(60px);
+}
+.container li:nth-child(2)
+{
+    transition-delay: 0.15s;
+}
+.container li:nth-child(3)
+{
+    transition-delay: 0.3s;
+}
+.container .card:hover .action li
+{
+    transform: translateX(0px);
+}
+.action li span
+{
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-20px);
+    white-space: nowrap;
+    background: #fff;
+    padding: 4px 6px;
+    color: #333;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+}
+.action li:hover span
+{
+    transform: translateY(-50%) translateX(0px);
+    opacity: 1;
+}
+.action li:hover
+{
+    background: #3333ff;
+    color: #fff;
+}
+.action li span:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}
+.categories
+{
+    position: relative;
+    height: 25vh;
+    width: 100%;
+    background: #cccccc;
+}
+.categories .content
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.categories .content .box
+{
+    width: 100px;
+    margin: 25px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   flex-direction: column;
+}
+.categories .content .box .imgBx 
+{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.categories .content .box .imgBx img 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.view li
+{
+    position: relative;
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    cursor: pointer;
+    transition: transform 0.5s;
+    transform: translateX(0px);
+}
+.view li span
+{
+    position: absolute;
+    right: 0px;
+    top: 115%;
+    transform: translateY(-50%) translateX(-20px);
+    white-space: nowrap;
+    background: #fff;
+    padding: 4px 6px;
+    color: #333;
+    font-weight: 500;
+    font-size: 12px;
+    border-radius: 4px;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.view li:hover span
+{
+    transform: translateY(-50%) translateX(0px);
+    opacity: 1;
+}
+.view li span:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    transform: translateY(-50%) rotate(45deg);
+}
+@media (max-width: 393px)
+{
+.card
+{
+    flex-direction: column;
+}
+}
